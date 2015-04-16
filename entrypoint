@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Link in the environment ini.
+env_ini=/etc/php5/custom.conf.d/${ENVIRONMENT}.ini
+if [ -f "$env_ini" ]; then
+    for d in $(find /etc/php5 -type d -name "conf.d"); do
+        (cd $d && ln -s $env_ini 999_${ENVIRONMENT}.ini;);
+    done;
+fi
+
+# Call whatever was passed to us.
+$@
