@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER Daniel Paul Searles <daniel.paul.searles@gmail.com>
 
-ENV ENVIRONMENT=production
+ENV APP_ENVIRONMENT=production
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 

@@ -11,15 +11,15 @@ environment INI files.
 
 ## Environment Vars
 
-### ENVIRONMENT
+### APP_ENVIRONMENT
 
-This `ENVIRONMENT` environment variable is used to link in potential INI
+This `APP_ENVIRONMENT` environment variable is used to link in potential INI
 overrides before running any PHP commands. See the Environment INI Files
 section below for more information.
 
 ## Environment INI files.
 There is an entrypoint shell script for this image that will look for a PHP INI
-file in this location: `/etc/php5/custom.conf.d/${ENVIRONMENT}.ini`
+file in this location: `/etc/php5/custom.conf.d/${APP_ENVIRONMENT}.ini`
 
 If it finds an INI file in that location then it will link it into all the
 conf.d directories before running any command you may pass to the docker image.

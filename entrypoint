@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Link in the environment ini.
-env_ini=/etc/php5/custom.conf.d/${ENVIRONMENT}.ini
+env_ini=/etc/php5/custom.conf.d/${APP_ENVIRONMENT}.ini
 if [ -f "$env_ini" ]; then
     for d in $(find /etc/php5 -type d -name "conf.d"); do
-        (cd $d && ln -s $env_ini 999_${ENVIRONMENT}.ini;);
+        (cd $d && ln -s $env_ini 999_${APP_ENVIRONMENT}.ini;);
     done;
 fi
 
