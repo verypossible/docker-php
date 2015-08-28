@@ -5,11 +5,11 @@ ini=${APP_ENVIRONMENT}.ini;
 env_d=/etc/php5/custom.conf.d;
 if [ -f "$env_d/$ini" ]; then
     for d in $(find /etc/php5 -type d -name "conf.d"); do
-        if [ -f "$d/999_$ini" ]; then
+        if [ -f "$d/zzz_$ini" ]; then
             continue;
         fi
 
-        (cd $d && ln -s $env_d/$ini 999_$ini;);
+        (cd $d && ln -s $env_d/$ini zzz_$ini;);
     done;
 fi
 
